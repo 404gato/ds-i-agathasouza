@@ -1,0 +1,41 @@
+package Procedimento;
+
+import javax.swing.JOptionPane;
+
+
+public class Operador {
+    
+    void soma(){
+        int a = Integer.parseInt(JOptionPane.showInputDialog("Digite o valor A"));
+        int b = Integer.parseInt(JOptionPane.showInputDialog("Digite o valor B"));
+        int soma = a + b;
+        
+        JOptionPane.showMessageDialog(null, "O valor da soma " + soma);
+        
+    }
+    
+    void subtacao(){
+        int c = Integer.parseInt(JOptionPane.showInputDialog("Digite o valor A"));
+        int d = Integer.parseInt(JOptionPane.showInputDialog("Digite o valor B"));
+        int sub = c - d;
+        
+        JOptionPane.showMessageDialog(null, "O valor da subtração é " + sub);
+    }
+    
+    void multiplicacao(){
+        double e = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor A"));
+        double f = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor B"));
+        double multp = e * f;
+        
+        JOptionPane.showMessageDialog(null, "O valor da multiplicação é " + multp);
+    }
+    
+    void divisao(){
+        double g = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor A"));
+        double h = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor B"));
+        double div = g / h;
+        
+        JOptionPane.showMessageDialog(null, "O valor da divisão é " + div);
+    }
+    
+}
