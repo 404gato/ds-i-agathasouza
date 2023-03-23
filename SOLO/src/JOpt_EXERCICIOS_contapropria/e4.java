@@ -17,22 +17,16 @@ import javax.swing.JOptionPane;
 public class e4 {
     public static void main(String[] args) {
         
-        double etiqueta = 0;
-               
-        //confirmação de produto      
-        String[] confirmacao = {"Sim", "Não"};
-        int c1 = JOptionPane.showOptionDialog(null, "ADICIONAR UM PRODUTO AO CARRINHO", "Clique no botão",
-                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, confirmacao, confirmacao[0]);
-        
+        double etiqueta, soma;
+        int resposta;
         
         //produto e repetição
         do{
             etiqueta = Double.parseDouble(JOptionPane.showInputDialog("Qual o valor na etiqueta?"));
             
-            c1 = JOptionPane.showOptionDialog(null, "ADICIONAR MAIS UM PRODUTO", "Clique no botão",
-                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, confirmacao, confirmacao[0]);
+            resposta = JOptionPane.showConfirmDialog(null, "Deseja digitar mais valores?");
         
-        }while (c1 == 0);
+        }while (resposta == JOptionPane.YES_OPTION);
            
        
         //pagamento parcelas
