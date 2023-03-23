@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 public class e4 {
     public static void main(String[] args) {
         
-        double etiqueta, soma;
+        double etiqueta, somaEtiqueta = 0;
         int resposta;
         
         //produto e repetição
@@ -25,8 +25,12 @@ public class e4 {
             etiqueta = Double.parseDouble(JOptionPane.showInputDialog("Qual o valor na etiqueta?"));
             
             resposta = JOptionPane.showConfirmDialog(null, "Deseja digitar mais valores?");
+            
+            somaEtiqueta += etiqueta;
         
         }while (resposta == JOptionPane.YES_OPTION);
+        
+        
            
        
         //pagamento parcelas
@@ -44,17 +48,17 @@ public class e4 {
             
             //dinheiro ou débito + desconto 10%
             if(pag2 == 0 || pag2 == 2){
-                double desconto = (etiqueta * 10)/100;
-                etiqueta = etiqueta - desconto;
+                double desconto = (somaEtiqueta * 10)/100;
+                somaEtiqueta = somaEtiqueta - desconto;
                 
-                JOptionPane.showMessageDialog(null, "10% DE DESCONTO. O valor total a pagar é R$" + etiqueta);
+                JOptionPane.showMessageDialog(null, "10% DE DESCONTO. O valor total a pagar é R$" + somaEtiqueta);
             }
             //crédito + desconto 15%
             else{
-                double desconto = (etiqueta * 15)/100;
-                etiqueta = etiqueta - desconto;
+                double desconto = (somaEtiqueta * 15)/100;
+                somaEtiqueta = somaEtiqueta - desconto;
                 
-                JOptionPane.showMessageDialog(null, "15% DE DESCONTO. O valor total a pagar é R$" + etiqueta);
+                JOptionPane.showMessageDialog(null, "15% DE DESCONTO. O valor total a pagar é R$" + somaEtiqueta);
             }
         }
         
@@ -66,15 +70,15 @@ public class e4 {
             
             //pix
             if(pag2 == 0){
-                double parcela = etiqueta / 2;
+                double parcela = somaEtiqueta / 2;
                              
                 JOptionPane.showMessageDialog(null, "O valor de cada parcela é de R$" + parcela);
             }
             //crédito + juros 10%
             else{
-                double juros = (etiqueta * 10)/100;
-                etiqueta = etiqueta + juros;             
-                double parcela = etiqueta / 2;
+                double juros = (somaEtiqueta * 10)/100;
+                somaEtiqueta = somaEtiqueta + juros;             
+                double parcela = somaEtiqueta / 2;
                 
                 JOptionPane.showMessageDialog(null, "O valor de cada parcela é de R$" + parcela);
             }
