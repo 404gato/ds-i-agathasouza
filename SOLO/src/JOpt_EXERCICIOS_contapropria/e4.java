@@ -49,22 +49,24 @@ public class e4 {
             //dinheiro ou débito + desconto 10%
             if(pag2 == 0 || pag2 == 2){
                 double desconto = (somaEtiqueta * 10)/100;
-                somaEtiqueta = somaEtiqueta - desconto;
+                double valorFinal = somaEtiqueta - desconto;
                 
-                JOptionPane.showMessageDialog(null, "10% DE DESCONTO. O valor total a pagar é R$" + somaEtiqueta);
+                JOptionPane.showMessageDialog(null,"Você recebeu 10% DE DESCONTO. \n" + 
+                        "Sua compra de R$" + somaEtiqueta + " ficará por R$" + valorFinal);
             }
             //crédito + desconto 15%
             else{
                 double desconto = (somaEtiqueta * 15)/100;
-                somaEtiqueta = somaEtiqueta - desconto;
+                double valorFinal = somaEtiqueta - desconto;
                 
-                JOptionPane.showMessageDialog(null, "15% DE DESCONTO. O valor total a pagar é R$" + somaEtiqueta);
+                JOptionPane.showMessageDialog(null, "Você recebeu 15% DE DESCONTO. \n" + 
+                        "Sua compra de R$" + somaEtiqueta + " ficará por R$" + valorFinal);
             }
         }
         
         //2x
         else{
-            String[] optionsPag = {"PIX", "Crédito"};
+            String[] optionsPag = {"PIX", "Crédito (juros 10%)"};
             int pag2 = JOptionPane.showOptionDialog(null, "FORMA DE PAGAMENTO", "Clique no botão",
                     JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, optionsPag, optionsPag[0]);
             
@@ -72,15 +74,17 @@ public class e4 {
             if(pag2 == 0){
                 double parcela = somaEtiqueta / 2;
                              
-                JOptionPane.showMessageDialog(null, "O valor de cada parcela é de R$" + parcela);
+                JOptionPane.showMessageDialog(null, "O total da sua compra é de R$" + somaEtiqueta + 
+                        "\nO valor de cada parcela a pagar é de R$" + parcela);
             }
             //crédito + juros 10%
             else{
                 double juros = (somaEtiqueta * 10)/100;
-                somaEtiqueta = somaEtiqueta + juros;             
-                double parcela = somaEtiqueta / 2;
+                double valorFinal = somaEtiqueta + juros;             
+                double parcela = valorFinal / 2;
                 
-                JOptionPane.showMessageDialog(null, "O valor de cada parcela é de R$" + parcela);
+                JOptionPane.showMessageDialog(null, "O total da sua compra com os juros é de R$" + valorFinal + 
+                        "\nO valor de cada parcela a pagar é de R$" + parcela);
             }
         }
         
