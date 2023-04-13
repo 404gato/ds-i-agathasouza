@@ -3,9 +3,9 @@ package model;
 public class Usuario {
     private Long id;
     private String nome;
-    private Long cpf;
+    private String cpf;
     private String email;
-    private Long telefone;
+    private String telefone;
 
  
     public Long getId() {
@@ -24,11 +24,11 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public Long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(Long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -40,11 +40,11 @@ public class Usuario {
         this.email = email;
     }
 
-    public Long getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(Long telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
     
